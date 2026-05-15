@@ -1,5 +1,5 @@
 package com.example.nexus_sonar_project.controller;
-
+import java.math.BigInteger; 
 import com.example.nexus_sonar_project.service.FactorialService;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +12,6 @@ class FactorialControllerTest {
 
     @Test
     void shouldReturnFactorial() {
-        assertEquals(120, controller.factorial(5));
+        assertEquals(BigInteger.valueOf(120), controller.factorial(5));
     }
 }

@@ -1,5 +1,5 @@
 package com.example.nexus_sonar_project.service;
-
+import java.math.BigInteger; 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,12 +10,12 @@ class FactorialServiceTest {
 
     @Test
     void shouldReturnOneForZero() {
-        assertEquals(1, factorialService.calculateFactorial(0));
+        assertEquals(BigInteger.ONE, factorialService.calculateFactorial(0));
     }
 
     @Test
     void shouldCalculateFactorial() {
-        assertEquals(120, factorialService.calculateFactorial(5));
+        assertEquals(BigInteger.valueOf(120), factorialService.calculateFactorial(5));
     }
 
     @Test
