@@ -30,7 +30,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                echo 'Analyse qualité du code...'
+                echo 'Analyse qualité...'
                 withSonarQubeEnv('SonarQube') {
                     sh '''
                         mvn sonar:sonar \
@@ -47,7 +47,6 @@ pipeline {
                 echo 'Vérification Quality Gate...'
                 timeout(time: 2, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
-                    //  STOP ici si code mauvais
                 }
             }
         }
@@ -56,17 +55,16 @@ pipeline {
             steps {
                 echo 'Publication sur Nexus...'
                 sh 'mvn deploy -DskipTests'
-                //  Publie sur Nexus si code propre
             }
         }
     }
 
     post {
         success {
-            echo ' Pipeline réussi - artifact publié sur Nexus !'
+            echo 'Pipeline réussi - artifact publié sur Nexus !'
         }
         failure {
-            echo 'Pipeline échoué - vérifier SonarQube !'
+            echo ' Pipeline échoué !'
         }
     }
 }
