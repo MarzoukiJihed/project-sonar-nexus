@@ -1,7 +1,6 @@
 # Construction d'une Chaîne CI/CD Sécurisée
 
 Projet DevOps — CI/CD
-Classe : Mastère CCDAD – M1
 Encadrant : Hedi MAGROUN 
 # Objectif du projet
 Ce projet vise à construire une chaîne CI/CD professionnelle intégrant 
@@ -16,9 +15,9 @@ Ce projet vise à construire une chaîne CI/CD professionnelle intégrant
 - Nexus Repository
 - Git / GitHub
 # Structure du projet
-- LAB_SONARQUBE.md → Analyse qualité du code
-- LAB_NEXUS.md → Gestion des artéfacts
-- README.md → Vue globale du projet
+- LAB_SONARQUBE.md : Analyse qualité du code
+- LAB_NEXUS.md : Gestion des artéfacts
+- README.md : Vue globale du projet
 - code source de projet
 
 # Semaine 1 
