@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin(origins = "http://localhost:4200")
 public class FactorialController {
     private final FactorialService factorialService;
-    private final  String show="";
+    
     public FactorialController(FactorialService factorialService) {
         this.factorialService = factorialService;
     }
