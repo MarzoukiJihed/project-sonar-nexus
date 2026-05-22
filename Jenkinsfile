@@ -47,7 +47,14 @@ pipeline {
                 }
             }
         }
-        
+        stage('Quality Gate') {
+   	    steps {
+                 echo 'Vérification Quality Gate...'
+        	  timeout(time: 5, unit: 'MINUTES') {
+                  waitForQualityGate abortPipeline: true
+                 }
+            }
+      }
         stage('Deploy to Nexus') {
             steps {
                 echo 'Publication sur Nexus...'
