@@ -36,3 +36,5 @@ Objectif :
 - Code analysé automatiquement par SonarQube
 - Artéfacts stockés dans Nexus
 - Pipeline CI/CD complet (Jenkins)
+# Rapport du projet
+https://github.com/MarzoukiJihed/project-sonar-nexus/tree/main/docs
