@@ -25,10 +25,10 @@ pipeline {
             }
             post {
                 success {
-                    echo ' Build et tests réussis'
+                    echo '✅ Build et tests réussis'
                 }
                 failure {
-                    echo ' Build ou tests échoués'
+                    echo '❌ Build ou tests échoués'
                 }
             }
         }
@@ -41,8 +41,17 @@ pipeline {
                         mvn sonar:sonar \
                         -Dsonar.projectKey=factorial-back-2026 \
                         -Dsonar.projectName=factorial-back \
-                        -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
+                        -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
                     '''
+                }
+            }
+        }
+        
+        stage('Quality Gate') {
+            steps {
+                echo 'Vérification Quality Gate...'
+                timeout(time: 10, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
                 }
             }
         }
@@ -57,12 +66,12 @@ pipeline {
     
     post {
         success {
-            echo 'Pipeline réussi - artifact publié sur Nexus !'
-            echo 'SonarQube: http://localhost:9000/dashboard?id=factorial-back-2026'
-            echo 'Nexus: http://localhost:8081/repository/maven-snapshots/'
+            echo '🎉 Pipeline réussi - artifact publié sur Nexus !'
+            echo '📊 SonarQube: http://localhost:9000/dashboard?id=factorial-back-2026'
+            echo '📦 Nexus: http://localhost:8081/repository/maven-snapshots/'
         }
         failure {
-            echo ' Pipeline échoué !'
+            echo '💥 Pipeline échoué !'
         }
     }
 }
