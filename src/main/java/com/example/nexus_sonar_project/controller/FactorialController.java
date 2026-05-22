@@ -15,10 +15,6 @@ public class FactorialController {
     public FactorialController(FactorialService factorialService) {
         this.factorialService = factorialService;
     }
-    public FactorialController(FactorialService factorialService) {
-        this.factorialService = factorialService;;
-    }
-
 
     @GetMapping("/factorial/{number}")
     public BigInteger factorial(@PathVariable int number) {
