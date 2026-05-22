@@ -7,7 +7,7 @@ Encadrant : Hedi MAGROUN
 Ce projet vise à construire une chaîne CI/CD professionnelle intégrant 
 - SonarQube (analyse qualité du code)
 - Nexus Repository (gestion des artéfacts Maven)
-- Jenkins (automatisation — étape future)
+- Jenkins (automatisation )
 # Outils utilisés
 - Java 21
 - Maven/SPRING BOOT 
@@ -19,8 +19,7 @@ Ce projet vise à construire une chaîne CI/CD professionnelle intégrant
 - LAB_SONARQUBE.md → Analyse qualité du code
 - LAB_NEXUS.md → Gestion des artéfacts
 - README.md → Vue globale du projet
-- docs/ai-prompts/ → échanges IA
-- src/ → code source de projet
+- code source de projet
 
 # Semaine 1 
 Objectif :
