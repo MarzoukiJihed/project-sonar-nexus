@@ -42,7 +42,6 @@ pipeline {
                         -Dsonar.projectKey=factorial-back-2026 \
                         -Dsonar.projectName=factorial-back \
                         -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
-                        -Dsonar.qualitygate.wait=false
                     '''
                 }
             }
